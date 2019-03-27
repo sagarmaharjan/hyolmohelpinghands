@@ -33,3 +33,26 @@
     font-weight: 300;
     font-style: normal;
 }
+
+:root {
+
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font: normal normal 1.6rem/1.4 'Roboto', sans-serif;
+}
+
+h1 {
+    font-weight: 300;
+}
