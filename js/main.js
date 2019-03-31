@@ -71,3 +71,18 @@ if (auto) {
     // run next slide at interval time
     slideInterval = setInterval(nextSlide, intervalTime);
 }
+
+// Assign height to banner 
+function assignHeightToBanner() {
+    var headerTop = document.querySelector('.header__top').clientHeight;
+    var headerBottom = document.querySelector('.header__bottom').clientHeight;
+    var header = headerTop + headerBottom;
+    console.log(header);
+    var mainslider = document.querySelector('.mainslider');
+
+    mainslider.style.height = "calc(100vh - " + header + "px )";
+    console.log('jai nepal');
+}
+
+document.addEventListener('DOMContentLoaded', assignHeightToBanner);
+window.addEventListener('resize', assignHeightToBanner);

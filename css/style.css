@@ -51,6 +51,8 @@ html {
 
 body {
     font: normal normal 1.6rem/1.6 'Roboto', sans-serif;
+    color: #333;
+    background: #f7f9f6;
 }
 
 ul {
@@ -67,6 +69,10 @@ button:focus,
 button:active {
     box-shadow: none;
     outline: none;
+}
+
+img {
+    max-width: 100%;
 }
 
 /* Utility Class */
@@ -107,6 +113,224 @@ button:active {
     text-align: center;
 }
 
+.btn {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 1.3rem;
+    font-weight: normal;
+    box-shadow: none;
+    padding: .5rem 1rem;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.btn-light {
+    background: #fff;
+    color: #333; 
+
+}
+
+p {
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+/* Header */
+.header {
+    display: initial;
+}
+.header__top {
+    background: #000;;
+    color: #fff;
+    text-align: center;
+    font-weight: 300;
+    padding: 15px 0;
+    font-size: 1.4rem;
+}
+
+.header__top .row {
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header__info {
+    padding-bottom: 6px;
+}
+
+.header__top p a {
+    display: inline-block;
+    color: #fff;
+}
+
+.header__bottom {
+    background-color: #f7f9f6;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    padding: 5px 0;
+}
+
+.logo {
+    max-width: 90px;
+}
+
+.logo a {
+    display: inline-block;
+}
+
+.header__bottom > .container {
+    position: relative;
+}
+
+/* menu css */
+.menu-wrap {
+    position: absolute;
+    right: 30px;
+    top: 0;
+    z-index: 1;
+}
+
+.menu-wrap .toggler {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+}
+
+.menu-wrap .hamburger {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    padding: 1rem;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hamburger Line */
+.menu-wrap .hamburger > div {
+    position: relative;
+    flex: none;
+    width: 100%;
+    height: 2px;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+}
+
+
+/* Hamburger lines -> Top and bottom */
+.menu-wrap .hamburger > div::before,
+.menu-wrap .hamburger >div::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: -10px;
+    width: 100%;
+    height: 2px;
+    background: inherit;
+}
+
+/* Moves line down */
+.menu-wrap .hamburger >div::after {
+    top: 10px;    
+}
+
+/* Toggler Animation */
+.menu-wrap .toggler:checked + .hamburger > div {
+    transform: rotate(135deg);
+}
+
+/* Turns lines into x */
+.menu-wrap .toggler:checked + .hamburger > div::before, 
+.menu-wrap .toggler:checked + .hamburger > div::after {
+    top: 0;
+    transform: rotate(90deg);    
+}
+
+/* Rotate on hover when checked */
+.menu-wrap .toggler:checked:hover + .hamburger > div {
+    transform: rotate(225deg);
+}
+
+/* Show menu */
+.menu-wrap .toggler:checked ~ .menu {
+    visibility: visible;
+}
+
+.menu-wrap .toggler:checked ~ .menu > div {
+    transform: scale(1);
+    transition-duration: var(--menu-speed);
+}
+
+.menu-wrap .toggler:checked ~ .menu > div > div{
+    opacity: 1;
+    transition: opacity 0.4s ease 0.4s;
+}
+
+.menu-wrap .menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    /* overflow: hidden; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.menu-wrap .menu > div {
+    background: var(--overlay-color);
+    width: 200vw;
+    height: 200vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0);
+    transition: all 0.4s ease;
+    border-radius: 50%;
+    flex: none;
+}
+
+.menu-wrap .menu > div > div {
+    text-align: center;
+    max-width: 90vw;
+    max-height: 100vh;
+    opacity: 0; ;
+    transition: opacity 0.4s ease;
+}
+
+.menu-wrap .menu > div > div > ul > li {
+    list-style: none;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+.menu-wrap .menu > div > div > ul > li > a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.4s ease;
+}
+
+.menu-wrap .menu > div > div > ul > li > a:hover {
+    color: var(--secondary-color);
+}
 
 /* Section: MainSlider */
 .mainslider {
@@ -228,6 +452,65 @@ button#prev:before {
     color: #333;
 }
 
+/* Section: Work */
+.work {
+    padding: 3rem 0
+}
+
+.work .row {
+    justify-content: center;
+}
+
+.work .col {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.work .card {
+    text-align: center;
+    background-color: #ecf2f5;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.card figure {
+    display: flex;
+    display: -ms-flexbox;
+    justify-content: center;
+}
+
+.card figure img:nth-child(2) {
+    display: none;
+}
+
+.card:hover,
+.card.active {
+    color: #fff;
+    background: -moz-linear-gradient(180deg, rgba(255,90,0,1) 0%, rgba(255,54,0,1) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255,90,0,1)), color-stop(100%, rgba(1255,54,0,1)));
+    background: -webkit-linear-gradient(180deg, rgba(255,90,0,1) 0%, rgba(255,54,0,1) 100%);
+    background: -o-linear-gradient(180deg, rgba(255,90,0,1) 0%, rgba(255,54,0,1) 100%);
+    background: -ms-linear-gradient(180deg, rgba(255,90,0,1) 0%, rgba(255,54,0,1) 100%);
+    background: linear-gradient(270deg, rgba(255,90,0,1) 0%, rgba(255,54,0,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5a00', endColorstr='#ff3600',GradientType=1 );
+}
+
+.card:hover figure img:nth-child(1),
+.card.active figure img:nth-child(1) {
+    display: none;
+}
+
+.card:hover figure img:nth-child(2),
+.card.active figure img:nth-child(2) {
+    display: block;
+}
+
+.card h2 {
+    font-size: 2rem;
+    padding: 1.5rem 0;
+}
+
 /* Media queries */
 @media(min-width: 576px) {
     .mainslider__content {
@@ -243,23 +526,168 @@ button#prev:before {
     .container {
         max-width: 540px
     }
+
+    .header__top .row {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header__top {
+        padding: 0;
+    }
+
+    .header__info {
+        padding: 5px 15px;
+    }
+
+    .header__info {
+        align-self: stretch;
+    }
+
+    .header__info .btn-light {
+        height: 100%;
+        display: flex;
+        display: -ms-flexbox;
+        align-items: center;
+    }
+
+    .work .col {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
 }
 
 @media(min-width: 768px) {
     .container {
         max-width: 720px;
     }
+
+    .header__info p{
+        display: inline-block;
+        margin-right: 15px;
+    }
+
+    .header__info {
+        padding: 15px;
+    }
+
+     .menu-wrap {
+        position: static;
+    }
+
+    .menu-wrap > input {
+        display: none;
+    }
+
+    .menu-wrap .hamburger {
+        display: none;
+    }
+
+    .menu-wrap .menu {
+        position: static;
+        height: auto;
+        visibility: visible;
+        background: transparent;
+        display: block;
+    }
+
+    .menu-wrap .menu > div {
+        height: auto;
+        width: 100%;
+        transform: scale(1);
+        display: block;
+        
+    }
+
+    .menu-wrap .menu > div > div{
+        max-width: unset;
+        max-height: unset;
+        opacity: 1;
+        display: block;
+        text-align: left;
+    }
+
+    .menu-wrap .menu ul {
+        display: flex;
+        display: -ms-flexbox;
+    }
+
+    .header__bottom .row {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu-wrap .menu > div > div > ul > li > a {
+        color: #333;
+    }
+
+    .header__donate {
+        align-self: stretch;
+    }
+
+    .header__donate  a {
+        height: 100%;
+        display: flex;
+        display: -ms-flexbox;
+        align-items: center;
+    }
+
+    .menu-wrap .menu > div > div > ul > li {
+        font-size: 1.6rem;
+        font-weight: bold;
+    }
+
+    .menu-wrap .menu > div > div > ul > li a:hover,
+    .menu-wrap .menu > div > div > ul > li.current a{
+        color: #000;
+    }
+
+    .work .col {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    .card h2 {
+        font-size: 2.4rem;
+    }
 }
 
 @media(min-width: 992px) {
+    p {
+        font-size: 1.6rem;
+    }
+
+    .card h2 {
+        font-size: 2.6rem;
+    }
+
     .container {
         max-width: 960px
     }
+
+    .menu-wrap .menu > div > div > ul > li {
+        padding: 2rem;
+    }
+
+    .work {
+        padding: 6rem 0;
+    }
+
+   
 }
 
 @media(min-width: 1200px) {
     .container {
         max-width: 1140px;
+    }
+
+    .work .card {
+        padding: 3rem;
     }
 }
 
