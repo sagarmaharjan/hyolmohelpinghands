@@ -75,6 +75,22 @@ img {
     max-width: 100%;
 }
 
+p {
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+h3 {
+    font-weight: normal;
+    line-height: 1.2;
+    font-size: 2rem
+}
+
+h6 {
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
 /* Utility Class */
 .container {
     width: 100%;
@@ -136,11 +152,59 @@ img {
 
 }
 
-p {
-    font-size: 1.4rem;
-    font-weight: 300;
+.btn-primary {
+    font-weight: bold;
+    background: -moz-linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(51,51,51,1) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0,0,0,1)), color-stop(100%, rgba(51,51,51,1)));
+    background: -webkit-linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(51,51,51,1) 100%);
+    background: -o-linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(51,51,51,1) 100%);
+    background: -ms-linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(51,51,51,1) 100%);
+    background: linear-gradient(270deg, rgba(0,0,0,1) 0%, rgba(51,51,51,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#333333',GradientType=1 );
+    border-radius: 2rem;
 }
 
+.progress > div:nth-child(1) {
+    width: 100%;
+    height: 5px;
+    background: #d6dee1;
+    position: relative;
+}
+
+.progress__line {
+    width: 83%;
+    height: 100%;
+    background-color: #333;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.progress__line > span {
+    position: absolute;
+    right:0;
+    width: 4.2rem;
+    height: 4.2rem;
+    top: -21px;
+    background: #333;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.2rem;
+    display: flex;
+    display: -ms-flexbox;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.progress__money {
+    padding-top: 2rem;
+    font-weight: 300;
+    display: flex;
+    display: -ms-flexbox;
+    justify-content: space-between;
+    font-size: 1.2rem;
+}
 /* Header */
 .header {
     display: initial;
@@ -541,7 +605,7 @@ button#prev:before {
     padding: 3rem 0;
     background: url(../img/charity-bckg.jpg) no-repeat center center/cover;
     color: #fff;
-    z-index: 99;
+    z-index: 1;
 }
 
 .charity::after {
@@ -562,6 +626,70 @@ button#prev:before {
 .charity p {
     margin-bottom: 1.5rem;
 }
+
+/* Section: Events and Featured */
+.events__item {
+    padding-bottom: 2rem;
+}
+
+.events__item figure {
+    width: 144px;
+    margin: 0 auto;
+}
+
+h6 span.date {
+    padding-right: 1.5rem;
+    margin-right: 1.5rem;
+    position: relative;
+}
+
+h6 span.date:after {
+    content: '';
+    position: absolute;
+    width: 0.1rem;
+    height: 100%;
+    background-color: #333;
+    top: 0;
+    right: 0;
+}
+
+.events-featured {
+    padding: 3rem 0;
+}
+
+.events__content p {
+    padding: 1rem 0;
+}
+
+.events__content a {
+    display: inline-block;
+    font-weight: normal;
+    color:  #000;
+    font-size: 1.4rem;
+}
+
+.highlight-events {
+    background: #ecf2f5;
+    padding: 1.5rem;
+}
+
+.highlight-col p {
+    padding: 1.5rem 0;
+}
+
+.highlight-events figure {
+    text-align: center;
+}
+
+.highlight-col {
+    display: block;
+    width: 100%;
+}
+
+.highlight-events .progress {
+    padding-top: 2.5rem;
+}
+
 
 /* Media queries */
 @media(min-width: 576px) {
@@ -613,11 +741,30 @@ button#prev:before {
         font-size: 2.9rem;
     }
 
-    .btn-transparent {
+    .btn-transparent,
+    .btn-primary {
         padding: 1rem 1.5rem;
         font-size: 1.5rem;
         border-radius: 3rem;
     }
+
+    .events__item {
+        display: flex;
+        display: -ms-flexbox;
+        padding-bottom: 3rem;
+    }
+
+    .events__item figure {
+        display: inline-block;
+        margin-right: 3rem;
+    }
+
+    h3 {
+        font-size: 2.2rem;
+        line-height: 1.4;
+    }
+
+    
 
 }
 
@@ -718,9 +865,23 @@ button#prev:before {
         font-size: 3.2rem;
     }
 
-    .btn-transparent {
+    .btn-transparent,
+    .btn-primary {
         padding: 1rem 2.5rem;
         font-size: 1.6rem;
+    }
+
+    h3 {
+        font-size: 2.4rem;
+    }
+
+    .highlight-col {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .highlight-events {
+        padding: 2rem;
     }
 }
 
@@ -742,7 +903,8 @@ button#prev:before {
     }
 
     .work,
-    .charity {
+    .charity,
+    .events-featured {
         padding: 6rem 0;
     }    
 
@@ -769,8 +931,18 @@ button#prev:before {
         line-height: 2;
     }
 
-    .btn-transparent {
+    .btn-transparent,
+    .btn-primary {
         padding: 1rem 3rem;
+    }
+
+    .events-featured .col {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .highlight-events {
+        padding: 2.5rem;
     }
    
 }
@@ -780,8 +952,24 @@ button#prev:before {
         max-width: 1140px;
     }
 
-    .work .card {
+    .work .card, .highlight-events {
         padding: 3rem;
+    }
+
+    .events ul {
+        padding-top: 4rem;
+    }
+
+    .highlight-events {
+        margin-top: 5.3rem;
+    }
+
+    .events__item {
+        padding-bottom: 4rem;
+    }
+
+    .highlight-events .progress {
+        padding-top: 3.5rem;
     }
 }
 
