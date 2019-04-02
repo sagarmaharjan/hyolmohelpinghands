@@ -6,7 +6,6 @@ const intervalTime = 5000;
 let slideInterval;
 
 const slidesImg = document.querySelectorAll('.mainslider__slide > img');
-console.log(slidesImg);
 
 // For making image parent background
 slidesImg.forEach(val => {
@@ -81,7 +80,6 @@ function assignHeightToBanner() {
     var mainslider = document.querySelector('.mainslider');
 
     mainslider.style.height = "calc(100vh - " + header + "px )";
-    console.log('jai nepal');
 }
 
 document.addEventListener('DOMContentLoaded', assignHeightToBanner);

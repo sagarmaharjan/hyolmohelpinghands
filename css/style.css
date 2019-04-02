@@ -138,6 +138,7 @@ h6 {
     padding: .5rem 1rem;
     color: #fff;
     text-transform: capitalize;
+    border: none;
 }
 
 .btn-transparent {
@@ -690,6 +691,243 @@ h6 span.date:after {
     padding-top: 2.5rem;
 }
 
+/* Section: Causes */
+.causes {
+    background: url(../img/charity-bckg.jpg) no-repeat center center/cover;
+    position: relative;
+    z-index: 1;
+    padding: 3rem 0;
+}
+
+.causes ul {
+    padding-top: 2rem;
+}
+
+.causes:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background:rgba(232,237,238,.8);
+    z-index: -1;
+}
+
+.causes__item {
+    background: #fff;
+    margin-bottom: 1.5rem;
+}
+
+.causes__content {
+    padding: 1.5rem;
+}
+
+.causes__content p {
+    padding: 1.5rem 0;
+}
+
+.causes__content .progress {
+    padding: 1.5rem;
+}
+
+h3 a {
+    color: #333;
+    animation: 0.3s ease;
+}
+
+h3 a:hover {
+    color: #000;
+}
+
+/* Section: Achievement */
+.achivement {
+    padding: 3rem 0;
+}
+
+.achivement .col {
+    padding-bottom: 2.5rem;
+    display: block;
+    width: 100%;
+}
+
+.achivement .col ul {
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+
+.achivement .col ul li {
+    display: block;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+/* footer */
+.top-footer {
+    background: url(../img/charity-bckg.jpg) no-repeat center center/cover;
+    color: #fff;
+    padding: ;
+    position: relative;
+    z-index: 1;
+    padding: 3rem 0;
+}
+
+.top-footer:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: -1;
+}
+
+.bottom-footer {
+    padding: 1rem 0;
+    font-size: 12px;
+    color: #7b7b7b;
+    background: #131212; 
+}
+
+.top-footer p,
+.top-footer a {
+    color: #929191;
+}
+
+.top-footer .col {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-bottom: 1.5rem;
+}
+
+.footer-title {
+    font-weight: normal;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.bottom-footer .col {
+    display: block;
+}
+
+.social-links {
+    padding-top: 1rem;
+}
+
+.social-links li{
+    margin-right: 10px;
+}
+
+.social-links li a{
+    display: inline-block;
+    text-indent: -9999px;
+    width: 30px;
+    height: 30px;
+    position: relative;
+}
+
+.social-links li a:after{
+    content: '';
+    position: absolute;
+    background: url(../img/social-icons-sprite.png) no-repeat;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-size: 120px;
+    background-position: 1px 0;
+    animation: 0.3 ease-in-out;
+}
+
+.social-links li a:hover:after {
+    background-position: 1px -31px;
+}
+
+.social-links li:nth-child(2) a:after{
+    background-position: -29px 0;
+}
+
+.social-links li:nth-child(2) a:hover:after{
+    background-position: -29px -31px;
+}
+
+.social-links li:nth-child(3) a:after{
+    background-position: -58px 0;
+}
+
+.social-links li:nth-child(3) a:hover:after{
+    background-position: -58px -31px;
+}
+
+.social-links li:nth-child(4) a:after{
+    background-position: -88px 0;
+}
+
+.social-links li:nth-child(4) a:hover:after{
+    background-position: -88px -31px;
+}
+
+.social-links ul {
+    display: flex;
+    display: -ms-flexbox;
+}
+
+.top-footer .col:nth-child(2) ul a {
+    display: inline-block;
+}
+
+.top-footer .latest-news li{
+    margin-bottom: 1rem;
+}
+
+.top-footer .latest-news a {
+    display: block;
+    width: 100%;
+    line-height: .9;
+}
+
+.subscribe-form {
+    padding-top: 2rem
+}
+
+.subscribe-form form {
+    display: flex;
+    display: -ms-flexbox;
+}
+
+.subscribe-form form input {
+    height: 32px;
+    border: none;
+    box-shadow: none;
+}
+
+.subscribe-form form input:not([type="submit"]) {
+    width: calc(100% - 70px);
+    padding: 10px 15px;
+}
+
+.subscribe-form form input[type="submit"] {
+    width: 70px;
+    text-align: center;
+    background: #adb1ac
+}
+
+.bottom-footer .col {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.top-footer ul li a {
+    transition: 0.3s ease;
+}
+
+.top-footer ul li a:hover {
+    color: #fff;
+}
+
 
 /* Media queries */
 @media(min-width: 576px) {
@@ -764,7 +1002,20 @@ h6 span.date:after {
         line-height: 1.4;
     }
 
+    .causes ul.row {
+        justify-content: center;
+    }
+
+    .causes ul.row li {
+        flex: 0 0 50%;
+        max-width: 100%;
+    }
     
+    .achivement .col ul {
+        display: flex;
+        display: -ms-flexbox;
+        justify-content: space-between;
+    }
 
 }
 
@@ -883,6 +1134,56 @@ h6 span.date:after {
     .highlight-events {
         padding: 2rem;
     }
+
+    .causes__item figure{
+        position: relative;
+        margin: 0;
+        padding: 0;
+        font-size: 0;
+        animation: 0.3s ease;
+    }
+
+    .causes__item figure:hover .overlay{
+        visibility: visible;
+        z-index: 1;
+    }
+
+    .causes__item .overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: flex;
+        display: -ms-flexbox;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.6);
+        visibility: hidden;
+        z-index: -1;
+    }
+
+    .achivement .row {
+        align-items
+    }
+
+    .achivement .col {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .achivement .col:nth-child(2) {
+        align-self: flex-end;
+    }
+
+    .achivement .col ul li {
+        margin-bottom: 0;
+    }
+
+    .top-footer .col {
+        max-width: 50%;
+        flex: 0 0 50%;
+    }
 }
 
 @media(min-width: 992px) {
@@ -904,7 +1205,9 @@ h6 span.date:after {
 
     .work,
     .charity,
-    .events-featured {
+    .events-featured,
+    .causes,
+    .top-footer {
         padding: 6rem 0;
     }    
 
@@ -945,6 +1248,48 @@ h6 span.date:after {
         padding: 2.5rem;
     }
    
+    .progress__money {
+        font-size: 1.5rem;
+    }
+
+    .causes ul.row li{
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+
+    .achivement {
+        padding: 6rem 0;
+    }
+
+    .achivement h3 {
+        font-size: 3.6rem;
+    }
+
+    .achivement h3 span {
+        font-size: 2rem;
+        text-transform: uppercase;
+    }
+
+    .top-footer .col {
+        max-width: 25%;
+        flex: 0 0 25%;
+    }
+
+    .bottom-footer {
+        padding: 1.5rem 0;
+    }
+
+    .top-footer .latest-news li{
+        margin-bottom: 1.5rem;
+    }
+
+    .top-footer .col:nth-child(2) ul li {
+        margin-bottom: 1rem;
+    }
+
+    .footer-title {
+        margin-bottom: 2rem;
+    }
 }
 
 @media(min-width: 1200px) {
