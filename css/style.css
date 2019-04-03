@@ -763,6 +763,70 @@ h3 a:hover {
     margin-bottom: 1.5rem;
 }
 
+/* About page******************************************************************************/
+/* Section: Showcase banner */
+.showcase-banner {
+    background: url(../img/about-bckg.jpg) no-repeat center top/cover;
+    min-height: 20rem;
+    position: relative;
+    z-index: 1;
+}
+
+.showcase-banner::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+.showcase-banner .main-title {
+    color: #fff;
+}
+
+.showcase-banner .main-title:after {
+    background: #ddd;
+}
+
+.showcase-banner > .container,
+.showcase-banner > .container > .row{
+    min-height: inherit;
+}
+
+.showcase-banner > .container > .row {
+    align-items: center;
+}
+
+
+/* Section: Charity Alt */
+.charity-alt {
+    background: initial;
+    color: #333;
+}
+
+.charity-alt:after {
+    display: none;
+}
+
+.charity-alt .main-title:after {
+    background-color: #000;
+}
+
+.charity-alt .btn-transparent {
+    font-weight: bold;
+    background: -moz-linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(51,51,51,1) 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0,0,0,1)), color-stop(100%, rgba(51,51,51,1)));
+    background: -webkit-linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(51,51,51,1) 100%);
+    background: -o-linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(51,51,51,1) 100%);
+    background: -ms-linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(51,51,51,1) 100%);
+    background: linear-gradient(270deg, rgba(0,0,0,1) 0%, rgba(51,51,51,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#333333',GradientType=1 );
+    border-radius: 3rem;
+}
+
 /* footer */
 .top-footer {
     background: url(../img/charity-bckg.jpg) no-repeat center center/cover;
@@ -1016,7 +1080,10 @@ h3 a:hover {
         display: -ms-flexbox;
         justify-content: space-between;
     }
-
+    
+    .showcase-banner {
+        min-height: 30rem;
+    }
 }
 
 @media(min-width: 768px) {
@@ -1183,6 +1250,10 @@ h3 a:hover {
     .top-footer .col {
         max-width: 50%;
         flex: 0 0 50%;
+    }
+
+    .showcase-banner {
+        min-height: 35rem;
     }
 }
 
