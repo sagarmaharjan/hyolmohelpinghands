@@ -76,7 +76,6 @@ function assignHeightToBanner() {
     var headerTop = document.querySelector('.header__top').clientHeight;
     var headerBottom = document.querySelector('.header__bottom').clientHeight;
     var header = headerTop + headerBottom;
-    console.log(header);
     var mainslider = document.querySelector('.mainslider');
 
     mainslider.style.height = "calc(100vh - " + header + "px )";
@@ -84,3 +83,13 @@ function assignHeightToBanner() {
 
 document.addEventListener('DOMContentLoaded', assignHeightToBanner);
 window.addEventListener('resize', assignHeightToBanner);
+
+// Making progress slider dynamic
+const raisedMoney = document.querySelectorAll('.js-raised-money');
+const goalMoney = document.querySelectorAll('.js-goal-money');
+
+for(var i = 0; i < raisedMoney.length; i++){
+    var valueInPercentage =((parseInt(raisedMoney[i].textContent) / parseInt(goalMoney[i].textContent)) * 100) + '%';
+    raisedMoney[i].parentElement.parentElement.previousElementSibling.firstElementChild.style.width = valueInPercentage;
+    raisedMoney[i].parentElement.parentElement.previousElementSibling.firstElementChild.firstElementChild.textContent = valueInPercentage;
+}
