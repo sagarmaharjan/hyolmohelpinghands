@@ -824,7 +824,113 @@ h3 a:hover {
     background: -ms-linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(51,51,51,1) 100%);
     background: linear-gradient(270deg, rgba(0,0,0,1) 0%, rgba(51,51,51,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#333333',GradientType=1 );
-    border-radius: 3rem;
+    border-radius: 2rem;
+}
+
+/* Section: Our Stat */
+.our-stat {
+    background: #262626;
+    padding: 3rem 0;
+}
+
+.our-stat .col {
+    flex: 0 0 100%;
+    max-width: 100%;;
+}
+
+.progress-circle {
+    width: 15rem;
+    height: 15rem;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    position: relative;
+    display: flex;
+    display: -ms-flexbox;
+    align-items: center;
+    justify-content: center;
+    color: #fff;    
+}
+
+.progress-circle  span {
+    font-size: 3rem;
+    font-weight: normal;
+}
+
+.circular-progress {
+    margin-bottom: 1.5rem;
+}
+
+.circular-progress h4 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #f7f9f6
+}
+
+/* Section: Testimonials */
+.testimonials {
+    padding: 3rem 0;
+}
+
+.tesimonial__item {
+    padding: 3rem 0;
+}
+
+.tesimonial__item .main-title{
+    font-style: italic;
+    position: relative;
+}
+
+.tesimonial__item .main-title:before {
+    content: '"';
+    font-weight: bold;
+    color: #000;
+    position: absolute;
+    font-size: 6rem;
+    left: 0;
+    top: -4.3rem;
+}
+
+.testimonial__media figure {
+    font-size: 0;
+    max-width: 6rem;
+    max-height: 6rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 1rem;
+}
+
+.testimonial__media {
+    display: flex;
+    display: -ms-flexbox;
+    align-items: center;
+    padding-top: 1.5rem;
+}
+
+.testimonial__media p {
+    font-size: 1.5rem;
+    color: #595858;
+    font-weight: bold;
+}
+
+.testimonial__media p span {
+    color: #000;
+}
+
+/* Section: Help Us */
+.help-us {
+    padding: 3rem 0;
+    background: #000;
+}
+
+.help-us .main-title{
+    color: #fff;
+    padding: 0;
+    margin: 0;
+}
+
+.help-us .row {
+    flex-direction: column;
 }
 
 /* footer */
@@ -1084,6 +1190,11 @@ h3 a:hover {
     .showcase-banner {
         min-height: 30rem;
     }
+
+    .our-stat .col {
+        flex: 0 0 50%;
+        max-width: 50%;;
+    }
 }
 
 @media(min-width: 768px) {
@@ -1255,6 +1366,22 @@ h3 a:hover {
     .showcase-banner {
         min-height: 35rem;
     }
+
+    .our-stat .col {
+        flex: 0 0 25%;
+        max-width: 25%;;
+    }
+
+    .testimonials .col {
+        max-width: 50%;
+        flex: 0 0 50%;
+    }
+
+    .help-us .row {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
 
 @media(min-width: 992px) {
@@ -1278,7 +1405,10 @@ h3 a:hover {
     .charity,
     .events-featured,
     .causes,
-    .top-footer {
+    .top-footer,
+    .our-stat,
+    .testimonials,
+    .help-us {
         padding: 6rem 0;
     }    
 
@@ -1360,6 +1490,14 @@ h3 a:hover {
 
     .footer-title {
         margin-bottom: 2rem;
+    }
+
+    .circular-progress h4 {
+        padding-top: 1.5rem;
+    }
+
+    .progress-circle span {
+        font-size: 4rem;
     }
 }
 
