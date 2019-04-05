@@ -728,7 +728,7 @@ h6 span.date:after {
 }
 
 .causes__content .progress {
-    padding: 1.5rem;
+    padding: 1.5rem 0;
 }
 
 h3 a {
@@ -954,6 +954,37 @@ h3 a:hover {
     font-weight: normal;
     color: #000;
     font-size: 1.5rem;
+}
+
+/* Cause page******************************************************************************/
+/* Section: Featured Cause */
+.featured-cause {
+    padding: 3rem 0;
+}
+
+.featured-cause .col {
+    margin-bottom: 1.5rem;
+}
+
+.featured-cause .causes__item,
+.footer-featured-cause .causes__item {
+    border: 1px solid #e0e0e0;
+}
+
+/* Section: Main Featured Cause */
+.main-featured-cause {
+    padding: 3rem 0;
+    background: #262626;
+    color: #fff;
+}
+
+.main-featured-cause .progress {
+    padding: 2.5rem 0;
+}
+
+/* Section: Footer Featured Cause */
+.footer-featured-cause {
+    padding: 3rem 0;
 }
 
 /* footer */
@@ -1414,6 +1445,26 @@ h3 a:hover {
     .gallery h3 {
         font-size: 2rem;
     }
+
+    .main-featured-cause .col {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .main-featured-cause .col:first-child {
+        order: 2;
+    }
+
+    .featured-cause .col:not(.col-alt),
+    .footer-featured-cause .col{
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .featured-cause .row,
+    .footer-featured-cause .row{
+        justify-content: center;
+    }
 }
 
 @media(min-width: 992px) {
@@ -1441,7 +1492,10 @@ h3 a:hover {
     .our-stat,
     .testimonials,
     .help-us,
-    .gallery {
+    .gallery
+    .featured-cause,
+    .footer-featured-cause,
+    .main-featured-cause{
         padding: 6rem 0;
     }    
 
@@ -1559,6 +1613,21 @@ h3 a:hover {
     .gallery__item {
         padding-bottom: 3rem;
     }
+
+    .featured-cause .col:not(.col-alt),
+    .footer-featured-cause .col{
+        flex: 0 0 33.333333%;
+        max-width: 33.333333;
+    }
+
+    .featured-cause .col-alt {
+        flex: 0 0 50%;
+        max-width: 50%;;
+    }
+
+    .featured-cause .col {
+        padding-bottom: 2rem;
+    }
 }
 
 @media(min-width: 1200px) {
@@ -1584,6 +1653,10 @@ h3 a:hover {
 
     .highlight-events .progress {
         padding-top: 3.5rem;
+    }
+
+    .featured-cause .highlight-events {
+        margin-top: 0;
     }
 }
 
